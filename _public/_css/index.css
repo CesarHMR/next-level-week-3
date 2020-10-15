@@ -9,7 +9,7 @@
 
 #container{
     margin: auto;
-    width: 90%;
+    width: min(90%, 1600px)
 }
 
 .location, h1, .visit p{
@@ -52,4 +52,57 @@ p{
 }
 a{
     animation-delay: 250ms;
+}
+
+/* Desktop Version*/
+@media(min-width:760px){
+    
+    #container{
+        background-image: url("../_images/bg.svg");
+        background-repeat: no-repeat;
+        background-position: 80% center;
+        background-size: clamp(30rem,54vh,56rem);
+        padding: 5rem 4rem;
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .location p{
+        text-align: right;
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+
+    .location, h1, .visit p{
+        height: initial;
+        text-align: initial;
+    }
+
+    main h1{
+        font-size: clamp(5rem, 8vw, 10rem);
+        font-weight: bolder;
+        line-height: .88;
+        width: min(300px, 80vw);
+        margin: clamp(5%, 9vh, 8%) 0px 7rem;
+    }
+
+    main p{
+        font-size: 2rem;
+        width: min(300px,20%);
+        line-height: 1.3;
+    }
+
+    .visit{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .visit a{
+        margin: initial;
+    }
 }
