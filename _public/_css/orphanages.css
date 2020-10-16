@@ -40,10 +40,17 @@ footer p{
     font-size: clamp(1.5rem,1.5vw,2rem);
 }
 
+#mapid{
+    width: 100%;
+    height: 100%;
+}
+
 #create-orphanage{
     position: absolute;
     bottom: 40px;
     right: 40px;
+
+    z-index: 10;
 
     width: 7rem;
     height: 7rem;
@@ -61,4 +68,47 @@ footer p{
 
 #create-orphanage:hover{
     background-color: #17d6eb;
+}
+
+/*Maps PopUp*/
+.leaflet-popup-content-wrapper{
+    background-color: black;
+    box-shadow: 1rem 1rem 2rem rgba(0,0,0,1);
+    border-radius: none;
+}
+
+.leaflet-popup-content{
+    color: #0089a5;
+    margin: .8rem 1.2rem;
+    border-radius: 2rem;
+    font: 600 2rem/1 'Nunito', sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leaflet-popup-content a{
+    width: 4rem;
+    height: 4rem;
+    background: #15c3d6;
+    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, .2);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background 200ms;
+}
+.leaflet-popup-content a:hover{
+    background-color: #17d6eb;
+}
+
+.leaflet-popup-tip{
+    display: none;
+}
+
+.leaflet-container{
+    z-index: 1;
 }
