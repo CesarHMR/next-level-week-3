@@ -1,4 +1,4 @@
-const map = L.map('mapid').setView([-27.5799590,-48.5384149], 13);
+const map = L.map('mapid').setView([-27.5799590,-48.5384149], 10);
 
 /*create and add tileLayer*/
 L
@@ -75,4 +75,13 @@ function ToggleSelect(event){
     const input = document.querySelector('[name="open-on-weekends"]')
 
     input.value = button.dataset.value;
+}
+
+function validate(event){
+    const lat = document.querySelector('#lat')
+
+    if(lat.value == ''){
+        alert('Preencha todos os Dados! Escolha um ponto no Mapa.')
+        event.preventDefault()
+    }
 }

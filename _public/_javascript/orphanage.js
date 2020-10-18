@@ -1,3 +1,6 @@
+const spanLat = document.querySelector('span[data-lat]')
+const spanLng = document.querySelector('span[data-lng]')
+
 const options = {
     dragging: false,
     touchZoom: false,
@@ -6,7 +9,7 @@ const options = {
     zoomControl: false
 }
 
-const map = L.map('mapid', options).setView([-27.5799590,-48.5384149], 13);
+const map = L.map('mapid', options).setView([spanLat.dataset.lat,spanLng.dataset.lng], 15);
 
 /*create and add tileLayer*/
 L
@@ -26,19 +29,12 @@ const popup = L.popup({
     minWitdh: 240,
     minHeight: 240
 }).setContent('Lar das meninas <a href="orphanage?id=1" class="choose-orphanage"><img src="/_images/arrow-white.svg"></a>')
+
+
 //create and add maeker*/
 L
-.marker([-27.5746501,-48.5384149], { icon: icon })
+.marker([spanLat.dataset.lat,spanLng.dataset.lng], { icon: icon })
 .addTo(map)
-
-L
-.marker([-27.5907193,-48.5045087], { icon: icon })
-.addTo(map)
-
-L
-.marker([-27.5951933,-48.5386929], { icon: icon })
-.addTo(map)
-
 
 function SelectImage(event){
 

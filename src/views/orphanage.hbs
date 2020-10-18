@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy</title>
+    <title>{{orphanage.name}} | Happy</title>
     <link rel="stylesheet" href="/_css/main.css" />
     <link rel="stylesheet" href="/_css/orphanage.css" />
     <link rel="stylesheet" href="/_css/animations.css" />
     <link rel="icon" href="/_images/logo-icon.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -39,66 +39,61 @@
 
       <main class="animate-appear with-sidebar">
         <div class="orphanage-details">
-          <img id="main-image" src="/_images/home.jpg" alt="Foto Orfanato" />
+          <img id="main-image" src="{{orphanage.mainImage}}" alt="Foto Orfanato" />
           <div class="images">
+            {{#each orphanage.images}}
             <button onclick="SelectImage(event)" class="active" type="button">
-              <img src="https://source.unsplash.com/random?id=1" alt="Foto Orfanato" />
+              <img src="{{this}}" alt="Foto Orfanato" />
             </button>
-            <button onclick="SelectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=2" alt="Foto Orfanato" />
-            </button>
-            <button onclick="SelectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=3" alt="Foto Orfanato" />
-            </button>
-            <button onclick="SelectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=4" alt="Foto Orfanato" />
-            </button>
-            <button onclick="SelectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=5" alt="Foto Orfanato" />
-            </button>
-            <button onclick="SelectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=6" alt="Foto Orfanato" />
-            </button>
+            {{/each}}
           </div>
 
           <div class="orphanage-details-content">
-            <h1>Orf. Esperança</h1>
-            <p>
-              Presta assistência a crianças de 06 a 15 anos que se encontre em
-              situação de risco e/ou vulnerabilidade social.
-            </p>
+            <h1>{{orphanage.name}}</h1>
+            <p>{{orphanage.about}}</p>
 
             <div class="map-container">
               <div id="mapid"></div>
-              <footer><a href="#">Ver rotas no Google Maps</a></footer>
+              <span
+              data-lat="{{orphanage.lat}}"
+              data-lng="{{orphanage.lng}}"
+              ></span>
+              <footer><a href="https://maps.google.com/mobile?q={{orphanage.lat}},{{orphanage.lng}}&z=15" target="_blank">Ver rotas no Google Maps</a></footer>
             </div>
 
             <hr />
 
             <h2>Instruções para visita</h2>
-            <p>
-              Venha como se sentir a vontade e traga muito amor e carinho para
-              dar
-            </p>
+            <p>{{orphanage.instructions}}</p>
 
             <div class="open-details">
               <div id="hour" class="box">
                 <img src="/_images/clock.svg" alt="Relógio" />
-                <p>Horário de visita das 8h até as 18h</p>
+                <p>{{orphanage.openning_hours}}</p>
               </div>
-              <div id="weekend" class="box">
-                <img
-                  src="/_images/info.svg"
-                  alt="Informação Importante"
-                />
-                <p>Atendemos aos finais de semanas</p>
-              </div>
+              {{#if orphanage.open}}
+                <div id="weekend" class="box open">
+                  <img
+                    src="/_images/info.svg"
+                    alt="Informação Importante"
+                  />
+                  <p>Atendemos aos fins de semana</p>
+                </div>
+              {{else}}
+                <div id="weekend" class="box close">
+                  <img
+                    src="/_images/info-red.svg"
+                    alt="Informação Importante"
+                  />
+                  <p>Não atendemos aos fins de semana</p>
+                </div>
+              {{/if}}
             </div>
 
-            <button class="whatsapp">
+            <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, gostaria de fazer uma visita ao {{orphanage.name}}" target="_blank" class="whatsapp">
               <img src="/_images/whatsapp.svg" alt="WhatsApp" /> Entre
               em contato
-            </button>
+            </a>
           </div>
         </div>
       </main>
