@@ -2,24 +2,21 @@ const Database = require('./db')
 const saveOrphanage = require('./saveOrphanage')
 
 Database.then(async db =>{
-    /*await saveOrphanage(db,{
+    await saveOrphanage(db,{
         lat:"-27.5907193",
         lng:"-48.5384149",
-        name: "Lar dos Meninos",
+        name: "Lar das Ciranças",
         about: "Presta assistência a crianças de todas as idades.",
         whatsapp: "(48)99999-9999",
-        images: ["https://images.unsplash.com/photo-1598137203972-e8cb7fc24345?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9",
-
-        "https://images.unsplash.com/photo-1595295413110-3304e36b564f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
-        ].toString(),
+        images: ["https://s2.glbimg.com/WpmBvZZRHmk1Y3hPwq4KHVNuXbA=/e.glbimg.com/og/ed/f/original/2018/12/18/winner_nian-wang.jpg"].toString(),
         instructions: "Traga todo seu amor para dar.",
         openning_hours: "Horário de visita das 10h até as 16h",
         open_on_weekends: "0",
         facebook: "https://www.facebook.com/",
-        instagram: "bbbb",
-        twitter: "cccc"
+        instagram: "",
+        twitter: ""
     }
-)*/
+)
     //consultar a tabela
     const selectedOrphanages = await db.all("SELECT * FROM orphanages")
     console.log(selectedOrphanages)
@@ -29,7 +26,5 @@ Database.then(async db =>{
     //console.log(orphanage)
 
     //remover um orfanato
-    //console.log(await db.run('DELETE FROM orphanages WHERE id = "1"'))
-    //console.log(await db.run('DELETE FROM orphanages WHERE id = "2"'))
-    //console.log(await db.run('DELETE FROM orphanages WHERE id = "3"'))
+    //console.log(await db.run('DELETE FROM orphanages'))
 })

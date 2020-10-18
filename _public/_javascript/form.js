@@ -72,7 +72,7 @@ function ToggleSelect(event){
 
     button.classList.add('active')
 
-    const input = document.querySelector('[name="open-on-weekends"]')
+    const input = document.querySelector('[name="open_on_weekends"]')
 
     input.value = button.dataset.value;
 }
