@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy</title>
+    <link rel="stylesheet" href="/_css/main.css" />
+    <link rel="stylesheet" href="/_css/form.css" />
+    <link rel="stylesheet" href="/_css/animations.css" />
+    <link rel="icon" href="/_images/logo-icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <div class="page-form">
+      <aside>
+        <img src="/_images/map-marker.svg" alt="Happy Logo" />
+
+        <footer>
+          <button id="back-button" onclick="history.back()">
+            <img src="/_images/arrow-back.svg" alt="Button" />
+          </button>
+        </footer>
+      </aside>
+
+      <main class="animate-appear with-sidebar">
+        <form class="form-details">
+          <h2>Dados</h2>
+          <hr />
+
+          <div class="map-container">
+            <input type="hidden" name="lat" />
+            <input type="hidden" name="lng" />
+            <div id="mapid"></div>
+
+            <div id="anchor-container">
+              <a href="#">Clicke no mapa para adicionar uma localização</a>
+            </div>
+          </div>
+          <fieldset>
+            <legend>Nome</legend>
+            <input type="text" name="name" id="name" required />
+          </fieldset>
+
+          <fieldset>
+            <legend>Sobre <span>Máximo de 300 caracteres</span></legend>
+            <textarea
+              required
+              name="about"
+              id="about"
+              cols="30"
+              rows="10"
+              maxlength="300"
+            ></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>Telefone</legend>
+            <input type="text" name="cellphone" id="cellphone" required />
+          </fieldset>
+
+          <fieldset>
+            <div class="images-new">
+              <legend>Fotos</legend>
+              <div class="new-upload">
+                <input type="text" name="fotos"/>
+                <span onclick="DeleteField(event)"
+                  ><img
+                    src="/_images/x-circle.svg"
+                    alt="Botão de Remover"
+                    title="Remover"
+                /></span>
+              </div>
+            </div>
+            <button
+              class="add-content"
+              type="button"
+              onclick="AddPhotoField()"
+            >
+              <img src="/_images/add-file.svg" alt="" />
+            </button>
+          </fieldset>
+
+          <h2>Visitação</h2>
+          <hr />
+
+          <fieldset>
+            <legend>Instruções</legend>
+            <textarea
+              required
+              name="instructions"
+              id="instructions"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </fieldset>
+
+          <fieldset>
+            <legend>Horários de Visita</legend>
+            <input type="text" name="schedules" id="schedules" required />
+          </fieldset>
+
+          <fieldset>
+            <legend>Atende aos fins de semana?</legend>
+            <div class="buttons-container">
+              <button
+              onclick="ToggleSelect(event)" 
+              id="yes" 
+              class="active" 
+              type="button"
+              data-value="1">
+                SIM
+              </button>
+              <button 
+              onclick="ToggleSelect(event)" 
+              id="no" 
+              type="button"
+              data-value="0">
+                NÃO
+              </button>
+            </div>
+            <input
+              type="hidden"
+              id="open-on-weekends"
+              name="open-on-weekends"
+              value="1"
+              required
+            />
+          </fieldset>
+
+          <button id="confirm">Confirmar</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="/_javascript/form.js"></script>
+  </body>
+</html>

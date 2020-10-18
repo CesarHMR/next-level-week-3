@@ -14,7 +14,7 @@ L
 .addTo(map);
 /*create icon*/
 const icon = L.icon({
-    iconUrl: "./_public/_images/map-marker.svg",
+    iconUrl: "/_images/map-marker.svg",
     iconSize: [58,58],
     iconAnchor: [29,69],
     popupAnchor: [170,2]
@@ -25,7 +25,7 @@ const popup = L.popup({
     className: 'map-popup',
     minWitdh: 240,
     minHeight: 240
-}).setContent('Lar das meninas <a href="orphanage.html?id=1" class="choose-orphanage"><img src="_public/_images/arrow-white.svg"></a>')
+}).setContent('Lar das meninas <a href="orphanage?id=1" class="choose-orphanage"><img src="/_images/arrow-white.svg"></a>')
 //create and add maeker*/
 L
 .marker([-27.5746501,-48.5384149], { icon: icon })
