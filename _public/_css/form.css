@@ -247,3 +247,15 @@ span{
 
     display: flex;
 }
+
+.required{
+    color: rgb(177, 177, 177);
+    padding: 0;
+    margin: 0 0 0 .5rem;
+}
+
+#social-media{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

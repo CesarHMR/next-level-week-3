@@ -34,6 +34,10 @@ module.exports = {
             orphanage.images = orphanage.images.split(",")
             orphanage.mainImage = orphanage.images[0]
             orphanage.open = orphanage.open_on_weekends == "0"? false : true;
+            orphanage.face = orphanage.facebook == ""?false:true;
+            orphanage.insta = orphanage.instagram == ""?false:true;
+            orphanage.twi = orphanage.twitter == ""?false:true;
+            
             return response.render('orphanage', {orphanage})
         }
         catch(error){
@@ -44,11 +48,7 @@ module.exports = {
 
     async saveOrphanage(request,response){
         const fields = request.body
-        //validar se todos os campos estão preenchidos
-        if(Object.values(fields).includes('')){
-            return response.send('Todos os campos devem ser preenchidos!')
-        }
-
+        console.log(fields)
         try{
             const db = await Database
             await saveOrphanage(db,{
@@ -60,7 +60,10 @@ module.exports = {
                 images: fields.images.toString(),
                 instructions: fields.instructions,
                 openning_hours: fields.openning_hours,
-                open_on_weekends: open_on_weekends,
+                open_on_weekends: fields.open_on_weekends,
+                facebook: fields.facebook,
+                instagram: fields.instagram,
+                twitter: fields.twitter,
             })
 
             return response.redirect('/orphanages')

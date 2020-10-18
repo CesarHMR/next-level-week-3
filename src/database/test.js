@@ -14,7 +14,10 @@ Database.then(async db =>{
         ].toString(),
         instructions: "Traga todo seu amor.",
         openning_hours: "Horário de visita das 10h até as 16h",
-        open_on_weekends: "0" 
+        open_on_weekends: "0",
+        facebook: "aaaa",
+        instagram: "bbbb",
+        twitter: "cccc"
     }
 )
     //consultar a tabela

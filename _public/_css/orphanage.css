@@ -187,8 +187,7 @@ hr{
     color: #ff3e52;
 }
 
-.whatsapp{
-    background: #3CDC8C;
+.social{
     border-radius: 20px;
     border: none;
     box-sizing: border-box;
@@ -206,10 +205,37 @@ hr{
 
     transition: background 200ms;
 }
+.social img{
+    margin-right: 1rem;
+}
+.social + .social{
+    margin-top: 1rem;
+}
+
+.whatsapp{
+    background: #3CDC8C;
+}
 .whatsapp:hover{
     background-color: #36cf82;
 }
 
-.whatsapp img{
-    margin-right: 1rem;
+.facebook{
+    background-color: #3b5998;
 }
+.facebook:hover{
+    background-color: #233d77;
+}
+
+.instagram{
+    background-color: #C13584;
+}
+.instagram:hover{
+    background-color: #a51d6a;
+}
+.twitter{
+    background-color: #00acee;
+}
+.twitter:hover{
+    background-color: #0191ca;
+}
+

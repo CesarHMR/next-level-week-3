@@ -12,7 +12,10 @@ function execute(db){
             images TEXT,
             instructions TEXT,
             openning_hours TEXT,
-            open_on_weekends TEXT
+            open_on_weekends TEXT,
+            facebook TEXT,
+            instagram TEXT,
+            twitter TEXT
         );
     `)
 }

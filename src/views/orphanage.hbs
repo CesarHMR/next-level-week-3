@@ -90,10 +90,24 @@
               {{/if}}
             </div>
 
-            <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, gostaria de fazer uma visita ao {{orphanage.name}}" target="_blank" class="whatsapp">
+            <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, gostaria de fazer uma visita ao {{orphanage.name}}" target="_blank" class="whatsapp social">
               <img src="/_images/whatsapp.svg" alt="WhatsApp" /> Entre
               em contato
             </a>
+            {{#if orphanage.face}}
+            <a href="{{orphanage.facebook}}" target="_blank" class="facebook social">
+              <img src="/_images/facebook.svg" alt="Facebook" style="width: 25px;"/>Siga a página no Facebook</a>
+            {{/if}}
+
+            {{#if orphanage.insta}}
+            <a href="{{orphanage.instagram}}" target="_blank" class="instagram social">
+              <img src="/_images/instagram.svg" alt="Instagram" style="width: 30px;"/>Siga no Instagram</a>
+            {{/if}}
+
+            {{#if orphanage.twi}}
+            <a href="{{orphanage.twitter}}" target="_blank" class="twitter social">
+              <img src="/_images/twitter.svg" alt="Twitter" style="width: 25px;" />Siga no Twitter</a>
+            {{/if}}
           </div>
         </div>
       </main>

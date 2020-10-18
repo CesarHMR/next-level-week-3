@@ -48,16 +48,16 @@
             <div id="mapid"></div>
 
             <div id="anchor-container">
-              <a href="#">Clicke no mapa para adicionar uma localização</a>
+              <a href="#">Clicke no mapa para adicionar uma localização<span class="required" title="Required Item">*</span></a>
             </div>
           </div>
           <fieldset>
-            <legend>Nome</legend>
+            <legend>Nome<span class="required" title="Required Item">*</span></legend>
             <input type="text" name="name" id="name" required />
           </fieldset>
 
           <fieldset>
-            <legend>Sobre <span>Máximo de 300 caracteres</span></legend>
+            <legend>Sobre<span class="required" title="Required Item">*</span> <span>Máximo de 300 caracteres</span></legend>
             <textarea
               required
               name="about"
@@ -69,15 +69,30 @@
           </fieldset>
 
           <fieldset>
-            <legend>Telefone</legend>
-            <input type="text" name="cellphone" id="cellphone" required />
+            <legend>Telefone<span class="required" title="Required Item">*</span></legend>
+            <input type="text" name="whatsapp" id="whatsapp" required />
+          </fieldset>
+
+          <fieldset id="social-media">
+            <div class="social-media">
+              <legend>Facebook</legend>
+              <input type="url" name="facebook">
+            </div>
+            <div class="social-media">
+              <legend>Instagram</legend>
+              <input type="url" name="instagram">
+            </div>
+            <div class="social-media">
+              <legend>Twitter</legend>
+              <input type="url" name="twitter">
+            </div>
           </fieldset>
 
           <fieldset>
             <div class="images-new">
-              <legend>Fotos</legend>
+              <legend>Fotos<span class="required" title="Required Item">*</span></legend>
               <div class="new-upload">
-                <input type="url" name="fotos"/>
+                <input type="url" name="images"/>
                 <span onclick="DeleteField(event)"
                   ><img
                     src="/_images/x-circle.svg"
@@ -99,23 +114,24 @@
           <hr />
 
           <fieldset>
-            <legend>Instruções</legend>
+            <legend>Instruções<span class="required" title="Required Item">*</span><span>Máximo de 300 caracteres</span></legend>
             <textarea
               required
               name="instructions"
               id="instructions"
               cols="30"
               rows="10"
+              maxlength="300"
             ></textarea>
           </fieldset>
 
           <fieldset>
-            <legend>Horários de Visita</legend>
-            <input type="text" name="schedules" id="schedules" required />
+            <legend>Horários de Visita<span class="required" title="Required Item">*</span><span>Máximo de 50 caracteres</span></legend>
+            <input type="text" name="openning_hours" id="openning_hours" maxlength="50" required />
           </fieldset>
 
           <fieldset>
-            <legend>Atende aos fins de semana?</legend>
+            <legend>Atende aos fins de semana?<span class="required" title="Required Item">*</span></legend>
             <div class="buttons-container">
               <button
               onclick="ToggleSelect(event)" 

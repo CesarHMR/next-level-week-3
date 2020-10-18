@@ -9,7 +9,10 @@ function saveOrphanage(db, orphanage){
         images,
         instructions,
         openning_hours,
-        open_on_weekends
+        open_on_weekends,
+        facebook,
+        instagram,
+        twitter
     ) VALUES (
         "${orphanage.lat}",
         "${orphanage.lng}",
@@ -19,7 +22,10 @@ function saveOrphanage(db, orphanage){
         "${orphanage.images}",
         "${orphanage.instructions}",
         "${orphanage.openning_hours}",
-        "${orphanage.open_on_weekends}"
+        "${orphanage.open_on_weekends}",
+        "${orphanage.facebook}",
+        "${orphanage.instagram}",
+        "${orphanage.twitter}"
         );
     `);
 }
