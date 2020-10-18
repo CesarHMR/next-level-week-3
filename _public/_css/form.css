@@ -1,4 +1,9 @@
 @charset "UTF-8";
+body{
+    background-image: url("../_images/background.svg");
+    background-size: 50rem;
+}
+
 main{
     flex: 1;
 }
