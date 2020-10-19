@@ -2,7 +2,7 @@ const Database = require('./db')
 const saveOrphanage = require('./saveOrphanage')
 
 Database.then(async db =>{
-    await saveOrphanage(db,{
+    /*await saveOrphanage(db,{
         lat:"-27.5907193",
         lng:"-48.5384149",
         name: "Lar das Ciranças",
@@ -16,7 +16,7 @@ Database.then(async db =>{
         instagram: "",
         twitter: ""
     }
-)
+)*/
     //consultar a tabela
     const selectedOrphanages = await db.all("SELECT * FROM orphanages")
     console.log(selectedOrphanages)
@@ -26,5 +26,5 @@ Database.then(async db =>{
     //console.log(orphanage)
 
     //remover um orfanato
-    //console.log(await db.run('DELETE FROM orphanages'))
+    //console.log(await db.run('DELETE FROM orphanages WHERE id = 14'))
 })
